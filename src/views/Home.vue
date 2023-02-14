@@ -4,6 +4,7 @@
     <div :class="{ 'main-app': true, 'menu-unfold': $store.state.collapsed }">
       <SliderNav />
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
