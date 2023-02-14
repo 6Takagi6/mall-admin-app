@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import LeftMenu from "./layout/menu.vue";
-import SliderNav from "./layout/sliderNav.vue";
+import LeftMenu from "./components/menu.vue";
+import SliderNav from "./components/sliderNav.vue";
 export default {
   data() {
     return{};
