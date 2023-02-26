@@ -71,6 +71,8 @@ export default {
           api.login(this.loginForm).then((res)=>
           {
             console.log(res);
+            this.$store.dispatch('setUserInfo',res);
+            //登录成功跳转到主页
             this.$router.push(
               {
                 name:'Home'

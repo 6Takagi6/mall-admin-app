@@ -1,10 +1,11 @@
 <template>
   <div class="home">
-    <LeftMenu />
+    <LeftMenu :key="key"/>
     <div :class="{ 'main-app': true, 'menu-unfold': $store.state.collapsed }">
       <SliderNav />
+       <router-view></router-view>
     </div>
-    <router-view></router-view>
+   
   </div>
 </template>
 
@@ -13,7 +14,16 @@ import LeftMenu from "./components/menu.vue";
 import SliderNav from "./components/sliderNav.vue";
 export default {
   data() {
-    return{};
+    return{
+      key:new Date().getTime()
+    };
+  },
+  watch:
+  {
+    $route()
+    {
+      this.key = new Date().getTime();//监测路由是否变化，如果变化则给key一个新的时间戳
+    }
   },
   components: {
     LeftMenu,
